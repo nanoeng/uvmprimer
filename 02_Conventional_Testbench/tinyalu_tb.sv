@@ -187,6 +187,8 @@ module top;
       @(negedge clk);
       reset_n = 1'b1;
       start = 1'b0;
+      $dumpfile("dump.vcd");  // Waveform dump file 
+  	   $dumpvars(0);
       repeat (1000) begin
          @(negedge clk);
          op_set = get_op();
